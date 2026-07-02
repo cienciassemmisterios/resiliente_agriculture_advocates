@@ -1,0 +1,2377 @@
+/* ==========================================================
+   ROOT
+   ----------------------------------------------------------
+   Variáveis globais do projeto
+   Centraliza cores, tamanhos, sombras e transições.
+========================================================== */
+
+:root {
+
+    /* ===== CORES ===== */
+
+    --primary-color: #011a64;
+    --secondary-color: #ff8a30;
+    --accent-color: #3786fe;
+
+    --background-color: #eaeaea;
+    --surface-color: #ffffff;
+
+    --text-color: #1d1d1d;
+    --text-light: #666666;
+    --text-white: #ffffff;
+
+    --border-color: #dddddd;
+
+    /* ===== TIPOGRAFIA ===== */
+
+    --font-family: "Poppins", sans-serif;
+
+    --fs-xs: clamp(.75rem, .70rem + .2vw, .875rem);
+    --fs-sm: clamp(.875rem, .80rem + .3vw, 1rem);
+
+    --fs-base: clamp(1rem, .95rem + .35vw, 1.125rem);
+
+    --fs-lg: clamp(1.25rem, 1rem + .6vw, 1.5rem);
+
+    --fs-xl: clamp(1.8rem, 1.5rem + 1vw, 2.5rem);
+
+    --fs-xxl: clamp(2.4rem, 2rem + 2vw, 4.2rem);
+
+    /* ===== ESPAÇAMENTOS ===== */
+
+    --space-xs: .5rem;
+    --space-sm: .75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 5rem;
+
+    /* ===== BORDER RADIUS ===== */
+
+    --radius-sm: .5rem;
+    --radius-md: .8rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* ===== SOMBRAS ===== */
+
+    --shadow-sm: 0 .15rem .5rem rgba(0,0,0,.08);
+
+    --shadow-md: 0 .3rem 1rem rgba(0,0,0,.12);
+
+    --shadow-lg: 0 .5rem 2rem rgba(0,0,0,.18);
+
+    /* ===== TRANSIÇÕES ===== */
+
+    --transition-fast: .25s ease;
+
+    --transition-normal: .4s ease;
+
+    /* ===== TAMANHOS ===== */
+
+    --container-width: min(1200px, 92%);
+
+    --header-height: 90px;
+
+}
+
+/* ==========================================================
+   RESET
+   ----------------------------------------------------------
+   Remove estilos padrões dos navegadores.
+========================================================== */
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+    scroll-padding-top:var(--header-height);
+
+}
+
+body{
+
+    font-family:var(--font-family);
+
+    background:var(--background-color);
+
+    color:var(--text-color);
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+picture{
+
+    display:block;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+button{
+
+    font:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+    background:none;
+
+}
+
+input,
+textarea,
+select{
+
+    font:inherit;
+
+    border:none;
+
+    outline:none;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/* ==========================================================
+   GLOBAL
+   ----------------------------------------------------------
+   Classes reutilizáveis do projeto.
+========================================================== */
+
+.interface{
+
+    width:100%;
+
+    max-width:var(--container-width);
+
+    margin-inline:auto;
+
+    padding-inline:1rem;
+
+}
+
+section{
+
+    padding-block:clamp(4rem,7vw,7rem);
+
+}
+
+main{
+
+    padding-top:var(--header-height);
+
+}
+
+.heading{
+
+    text-align:center;
+
+    font-size:var(--fs-xl);
+
+    font-weight:700;
+
+    margin-bottom:3rem;
+
+    color:var(--primary-color);
+
+}
+
+.heading span{
+
+    color:var(--secondary-color);
+
+}
+
+.section-title{
+
+    font-size:var(--fs-xl);
+
+    color:var(--primary-color);
+
+    margin-bottom:1rem;
+
+}
+
+.section-subtitle{
+
+    font-size:var(--fs-lg);
+
+    color:var(--secondary-color);
+
+    margin-bottom:1rem;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+/* ==========================================================
+   TIPOGRAFIA
+   ----------------------------------------------------------
+   Hierarquia visual consistente.
+========================================================== */
+
+h1,
+h2,
+h3,
+h4{
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    color:var(--primary-color);
+
+}
+
+h1{
+
+    font-size:var(--fs-xxl);
+
+}
+
+h2{
+
+    font-size:var(--fs-xl);
+
+}
+
+h3{
+
+    font-size:var(--fs-lg);
+
+}
+
+h4{
+
+    font-size:var(--fs-base);
+
+}
+
+p{
+
+    font-size:var(--fs-base);
+
+    color:var(--text-light);
+
+    margin-top:.75rem;
+
+}
+
+strong{
+
+    font-weight:700;
+
+}
+
+span{
+
+    color:inherit;
+
+}
+
+/* ==========================================================
+   BOTÕES
+   ----------------------------------------------------------
+   Todos os botões seguem o mesmo padrão visual.
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    min-height:48px;
+
+    padding:.9rem 1.8rem;
+
+    border-radius:var(--radius-md);
+
+    background:var(--accent-color);
+
+    color:var(--text-white);
+
+    font-weight:600;
+
+    font-size:var(--fs-sm);
+
+    border:2px solid transparent;
+
+    transition:var(--transition-normal);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.btn:hover{
+
+    background:transparent;
+
+    border-color:var(--accent-color);
+
+    color:var(--accent-color);
+
+    transform:translateY(-2px);
+
+}
+
+.btn:active{
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================================
+   UTILITÁRIOS
+   ----------------------------------------------------------
+   Classes auxiliares reutilizáveis.
+========================================================== */
+
+.flex{
+
+    display:flex;
+
+}
+
+.grid{
+
+    display:grid;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.w-100{
+
+    width:100%;
+
+}
+
+.mt-1{
+
+    margin-top:1rem;
+
+}
+
+.mt-2{
+
+    margin-top:2rem;
+
+}
+
+.mb-1{
+
+    margin-bottom:1rem;
+
+}
+
+.mb-2{
+
+    margin-bottom:2rem;
+
+}
+
+/* ==========================================================
+   HEADER
+   ----------------------------------------------------------
+   Cabeçalho principal
+   Estruturado com Flexbox e preparado para receber
+   menu hambúrguer futuramente.
+========================================================== */
+
+.header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:var(--header-height);
+
+    background:rgba(1,26,100,.95);
+
+    backdrop-filter:blur(12px);
+
+    z-index:1000;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.header .interface{
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:2rem;
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.logo img{
+
+    width:55px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    transition:var(--transition-normal);
+
+}
+
+.logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   MENU DESKTOP
+========================================================== */
+
+.menu_desktop{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.menu_desktop ul{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:clamp(1rem,2vw,2.5rem);
+
+}
+
+.menu_desktop li{
+
+    list-style:none;
+
+}
+
+.menu_desktop a{
+
+    position:relative;
+
+    display:inline-block;
+
+    color:var(--text-white);
+
+    font-size:var(--fs-sm);
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.menu_desktop a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--secondary-color);
+
+    transition:.3s;
+
+}
+
+.menu_desktop a:hover{
+
+    color:var(--secondary-color);
+
+}
+
+.menu_desktop a:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   BOTÃO CONTACTO
+========================================================== */
+
+.contact_button{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+/* ==========================================================
+   BOTÃO HAMBÚRGUER
+========================================================== */
+
+.menu_toggle{
+
+    display:none;
+
+    width:48px;
+
+    height:48px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   MENU MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .menu_toggle{
+
+        display:flex;
+
+    }
+
+    .contact_button{
+
+        display:none;
+
+    }
+
+    .menu_desktop{
+
+        position:fixed;
+
+        top:var(--header-height);
+
+        left:-100%;
+
+        width:100%;
+
+        height:calc(100vh - var(--header-height));
+
+        background:var(--primary-color);
+
+        justify-content:flex-start;
+
+        align-items:flex-start;
+
+        transition:.35s ease;
+
+        padding:3rem;
+
+        z-index:999;
+
+    }
+
+    .menu_desktop.active{
+
+        left:0;
+
+    }
+
+    .menu_desktop ul{
+
+        width:100%;
+
+        flex-direction:column;
+
+        gap:2rem;
+
+    }
+
+    .menu_desktop li{
+
+        width:100%;
+
+    }
+
+    .menu_desktop a{
+
+        display:block;
+
+        width:100%;
+
+        font-size:1.3rem;
+
+    }
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero_section{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    min-height:calc(100vh - var(--header-height));
+
+    padding-block:6rem;
+
+    background-image:url("images/hero.png");
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:cover;
+
+    overflow:hidden;
+
+}
+
+/* Escurece a imagem para melhorar a leitura */
+
+.hero_section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.45)
+    );
+
+}
+
+/* Conteúdo */
+
+.hero_section .interface{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:minmax(300px,700px);
+
+    align-items:center;
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.hero_text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+.hero_text h1{
+
+    color:white;
+
+    font-size:clamp(2.5rem,6vw,4.8rem);
+
+    font-weight:300;
+
+    line-height:1.15;
+
+}
+
+.hero_text h1 span{
+
+    display:block;
+
+    color:var(--secondary-color);
+
+    font-weight:700;
+
+}
+
+.hero_text p{
+
+    color:rgba(255,255,255,.92);
+
+    font-size:clamp(1rem,2vw,1.25rem);
+
+    max-width:42rem;
+
+}
+
+.hero_text .btn{
+
+    width:fit-content;
+
+    margin-top:.5rem;
+
+}
+
+/* ==========================================================
+   BOTÃO DA HERO
+========================================================== */
+
+.hero_text .btn{
+
+    background:var(--secondary-color);
+
+    color:var(--primary-color);
+
+    border:2px solid var(--secondary-color);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.hero_text .btn:hover{
+
+    background:transparent;
+
+    color:white;
+
+    border-color:white;
+
+}
+
+/* ==========================================================
+   ANIMAÇÃO SUAVE
+========================================================== */
+
+.hero_text{
+
+    animation:fadeHero .8s ease;
+
+}
+
+@keyframes fadeHero{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   SERVICES
+   ----------------------------------------------------------
+   Seção principal de serviços.
+   Toda a estrutura permanece dentro do fluxo da página,
+   eliminando sobreposições.
+========================================================== */
+
+.services_section{
+
+    background:var(--background-color);
+
+}
+
+.services_section .interface{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5rem;
+
+}
+
+/* ==========================================================
+   GRID DOS SERVIÇOS
+========================================================== */
+
+.list_services_icons{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:2rem;
+
+    align-items:stretch;
+
+}
+
+/* ==========================================================
+   CARD DO SERVIÇO
+========================================================== */
+
+.service_icon{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:2rem 1.5rem;
+
+    background:var(--surface-color);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition-normal);
+
+    text-align:center;
+
+    min-height:220px;
+
+}
+
+.service_icon:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.service_icon i{
+
+    font-size:3rem;
+
+    color:var(--primary-color);
+
+}
+
+.service_icon p{
+
+    margin:0;
+
+    font-size:var(--fs-base);
+
+    color:var(--text-color);
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   SERVICES DETAILS
+   ----------------------------------------------------------
+   Cards informativos dos serviços.
+========================================================== */
+
+.services_details_container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5rem;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.services_details {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.service_image {
+    flex: 1;
+}
+
+.service_image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.service_text {
+    flex: 1;
+}
+
+/* ==========================================================
+   IMAGEM
+========================================================== */
+
+.service_image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.service_image img{
+
+    width:100%;
+
+    max-width:420px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.service_text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:1rem;
+
+}
+
+.service_text h2{
+
+    margin:0;
+
+    color:var(--primary-color);
+
+}
+
+.service_text p{
+
+    margin:0;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   ABOUT
+========================================================== */
+
+.about_us_section{
+
+    background:var(--primary-color);
+
+    color:white;
+
+}
+
+.about_us_section .interface{
+
+    display:grid;
+
+    grid-template-columns:
+
+        minmax(260px,420px)
+        1fr;
+
+    gap:3rem;
+
+    align-items:center;
+
+}
+
+/* ==========================================================
+   IMAGEM
+========================================================== */
+
+.about_image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.about_image img{
+
+    width:100%;
+
+    max-width:400px;
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.about_content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+}
+
+.about_content h2{
+
+    color:white;
+
+    margin-bottom:.5rem;
+
+}
+
+.about_content p{
+
+    color:rgba(255,255,255,.92);
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE INTERMEDIÁRIA
+========================================================== */
+
+@media (max-width:900px){
+
+    .services_details{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:2rem;
+
+    }
+
+    .services_details.reverse{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .services_details.reverse .service_image{
+
+        order:1;
+
+    }
+
+    .services_details.reverse .service_text{
+
+        order:2;
+
+    }
+
+    .service_text{
+
+        align-items:center;
+
+    }
+
+    .about_us_section .interface{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:2.5rem;
+
+    }
+
+    .about_content{
+
+        align-items:center;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .list_services_icons{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .service_icon{
+
+        min-height:190px;
+
+    }
+
+}
+
+/* ==========================================================
+   COURSES
+   ----------------------------------------------------------
+   Seção de cursos utilizando CSS Grid moderno.
+========================================================== */
+
+.courses_section{
+
+    background:var(--background-color);
+
+}
+
+.courses_section .interface{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3rem;
+
+}
+
+/* ==========================================================
+   GRID DOS CURSOS
+========================================================== */
+
+.courses_container{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            auto-fit,
+            minmax(280px,1fr)
+        );
+
+    gap:2rem;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.course_card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:1.25rem;
+
+    padding:2rem;
+
+    background:var(--surface-color);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition-normal);
+
+    border-top:6px solid var(--accent-color);
+
+}
+
+.course_card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================================================
+   ÍCONE
+========================================================== */
+
+.course_card i{
+
+    font-size:3rem;
+
+    color:var(--accent-color);
+
+}
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.course_card h3{
+
+    margin:0;
+
+    color:var(--primary-color);
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.course_card p{
+
+    flex:1;
+
+    margin:0;
+
+}
+
+/* ==========================================================
+   BOTÃO
+========================================================== */
+
+.course_card .btn{
+
+    margin-top:auto;
+
+}
+
+/* ==========================================================
+   PORTFOLIO
+========================================================== */
+
+.portfolio{
+
+    background:white;
+
+}
+
+.portfolio .interface{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3rem;
+
+}
+
+/* ==========================================================
+   GRID DO PORTFÓLIO
+========================================================== */
+
+.portfolio_container{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            auto-fit,
+            minmax(320px,1fr)
+        );
+
+    gap:2rem;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.portfolio_card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+    cursor:pointer;
+
+    aspect-ratio:16/10;
+
+}
+
+/* ==========================================================
+   IMAGEM
+========================================================== */
+
+.portfolio_card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+/* ==========================================================
+   HOVER DA IMAGEM
+========================================================== */
+
+.portfolio_card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.portfolio_overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:2rem;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+
+            rgba(1,26,100,.20),
+
+            rgba(1,26,100,.92)
+
+        );
+
+    color:white;
+
+    opacity:0;
+
+    transition:var(--transition-normal);
+
+}
+
+.portfolio_card:hover .portfolio_overlay{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.portfolio_overlay h3{
+
+    color:white;
+
+    margin:0;
+
+}
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.portfolio_overlay p{
+
+    color:white;
+
+    margin:0;
+
+    max-width:320px;
+
+}
+
+/* ==========================================================
+   BOTÃO DO PORTFÓLIO
+========================================================== */
+
+.portfolio_overlay a{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--primary-color);
+
+    transition:var(--transition-fast);
+
+}
+
+.portfolio_overlay a:hover{
+
+    background:var(--secondary-color);
+
+    color:white;
+
+    transform:rotate(10deg);
+
+}
+
+.portfolio_overlay i{
+
+    font-size:1.4rem;
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:900px){
+
+    .courses_container{
+
+        grid-template-columns:
+
+            repeat(
+                auto-fit,
+                minmax(250px,1fr)
+            );
+
+    }
+
+    .portfolio_container{
+
+        grid-template-columns:
+
+            repeat(
+                auto-fit,
+                minmax(280px,1fr)
+            );
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:600px){
+
+    .courses_container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio_container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio_card{
+
+        aspect-ratio:4/3;
+
+    }
+
+}
+/* ==========================================================
+   CONTACT
+   ----------------------------------------------------------
+   Formulário de contacto responsivo.
+========================================================== */
+
+.contact_section{
+
+    background:var(--background-color);
+
+}
+
+.contact_section .interface{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3rem;
+
+}
+
+/* ==========================================================
+   FORMULÁRIO
+========================================================== */
+
+.contact_form{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin-inline:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+    background:var(--surface-color);
+
+    padding:2.5rem;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ==========================================================
+   GRID DOS CAMPOS
+========================================================== */
+
+.form_grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(250px,1fr)
+        );
+
+    gap:1.5rem;
+
+}
+
+/* ==========================================================
+   GRUPOS
+========================================================== */
+
+.form_group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.6rem;
+
+}
+
+.form_group label{
+
+    font-weight:600;
+
+    color:var(--primary-color);
+
+}
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+.form_group input,
+.form_group textarea{
+
+    width:100%;
+
+    padding:1rem 1.2rem;
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-md);
+
+    background:#fff;
+
+    transition:var(--transition-fast);
+
+}
+
+.form_group input:focus,
+.form_group textarea:focus{
+
+    border-color:var(--accent-color);
+
+    box-shadow:
+        0 0 0 .2rem
+        rgba(55,134,254,.15);
+
+}
+
+.form_group textarea{
+
+    min-height:180px;
+
+    resize:vertical;
+
+}
+
+/* ==========================================================
+   BOTÃO
+========================================================== */
+
+.contact_form .btn{
+
+    align-self:flex-start;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+
+    background:var(--primary-color);
+
+    color:white;
+
+    margin-top:5rem;
+
+    padding-block:4rem 2rem;
+
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.footer .interface{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3rem;
+
+}
+
+/* ==========================================================
+   PARTE SUPERIOR
+========================================================== */
+
+.footer_top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:3rem;
+
+    flex-wrap:wrap;
+
+}
+
+/* ==========================================================
+   LOGO / TEXTO
+========================================================== */
+
+.footer_logo{
+
+    max-width:420px;
+
+}
+
+.footer_logo h3{
+
+    color:white;
+
+    margin-bottom:.75rem;
+
+}
+
+.footer_logo p{
+
+    color:rgba(255,255,255,.85);
+
+}
+
+/* ==========================================================
+   REDES SOCIAIS
+========================================================== */
+
+.footer_social{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.footer_social a{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    transition:var(--transition-normal);
+
+}
+
+.footer_social a:hover{
+
+    background:var(--secondary-color);
+
+    transform:translateY(-4px);
+
+}
+
+.footer_social i{
+
+    font-size:1.3rem;
+
+    color:white;
+
+}
+
+/* ==========================================================
+   PARTE INFERIOR
+========================================================== */
+
+.footer_bottom{
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    padding-top:2rem;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+.footer_bottom p{
+
+    color:rgba(255,255,255,.75);
+
+    margin:0;
+
+}
+
+.footer_bottom strong{
+
+    color:var(--secondary-color);
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width:768px){
+
+    .form_grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact_form{
+
+        padding:2rem;
+
+    }
+
+    .contact_form .btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .footer_top{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .footer_logo{
+
+        max-width:100%;
+
+    }
+
+    .footer_social{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .footer_bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .contact_form{
+
+        padding:1.5rem;
+
+    }
+
+    .footer{
+
+        padding-block:3rem 1.5rem;
+
+    }
+
+    .footer_social a{
+
+        width:46px;
+
+        height:46px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MEDIA QUERIES
+   ----------------------------------------------------------
+   Ajustes responsivos para todas as resoluções.
+========================================================== */
+
+/* ==========================================================
+   ULTRAWIDE (>= 1600px)
+========================================================== */
+
+@media (min-width:1600px){
+
+    :root{
+
+        --container-width:1440px;
+
+    }
+
+    .hero_text{
+
+        max-width:760px;
+
+    }
+
+    .portfolio_container{
+
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(360px,1fr)
+            );
+
+    }
+
+}
+
+/* ==========================================================
+   DESKTOP (1200px - 1599px)
+========================================================== */
+
+@media (max-width:1200px){
+
+    .interface{
+
+        width:min(94%,1200px);
+
+    }
+
+}
+
+/* ==========================================================
+   NOTEBOOK (992px - 1199px)
+========================================================== */
+
+@media (max-width:992px){
+
+    .menu_desktop ul{
+
+        gap:1.25rem;
+
+    }
+
+    .hero_section{
+
+        padding-block:5rem;
+
+    }
+
+    .hero_text{
+
+        max-width:650px;
+
+    }
+
+    .services_details{
+
+        gap:2.5rem;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET (768px - 991px)
+========================================================== */
+
+@media (max-width:768px){
+
+    /* Header */
+
+    .header{
+
+        height:80px;
+
+    }
+
+    main{
+
+        padding-top:80px;
+
+    }
+
+
+
+    }
+
+    .menu_toggle{
+
+        display:flex;
+
+    }
+
+    .contact_button{
+
+        display:none;
+
+    }
+
+    /* Hero */
+
+    .hero_section{
+
+        min-height:auto;
+
+        padding-block:5rem;
+
+    }
+
+    .hero_section .interface{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero_text{
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .hero_text .btn{
+
+        width:100%;
+
+        max-width:280px;
+
+    }
+
+    /* Services */
+
+    .list_services_icons{
+
+        grid-template-columns:
+
+            repeat(
+                auto-fit,
+                minmax(220px,1fr)
+            );
+
+    }
+
+
+    /* About */
+
+    .about_us_section .interface{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .about_content{
+
+        align-items:center;
+
+    }
+
+    .about_content p {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    /* Contact */
+
+    .form_grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact_form{
+
+        padding:2rem;
+
+    }
+
+    .contact_form .btn{
+
+        width:100%;
+
+    }
+
+    /* Footer */
+
+    .footer_top{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .footer_bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+/* ==========================================================
+   Services container (bellow herro ellement
+========================================================== */
+@media (max-width: 768px) {
+    .services_details {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ==========================================================
+   CELULAR GRANDE (576px - 767px)
+========================================================== */
+
+@media (max-width:576px){
+
+    section{
+
+        padding-block:4rem;
+
+    }
+
+    .hero_text h1{
+
+        line-height:1.2;
+
+    }
+
+    .courses_container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio_container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portfolio_card{
+
+        aspect-ratio:4/3;
+
+    }
+
+    .contact_form{
+
+        padding:1.5rem;
+
+    }
+
+}
+
+/* ==========================================================
+   CELULAR PEQUENO (até 400px)
+========================================================== */
+
+@media (max-width:400px){
+
+    :root{
+
+        --header-height:75px;
+
+    }
+
+    .interface{
+
+        width:95%;
+
+        padding-inline:.5rem;
+
+    }
+
+    .hero_text h1{
+
+        font-size:2rem;
+
+    }
+
+    .hero_text p{
+
+        font-size:.95rem;
+
+    }
+
+    .service_icon{
+
+        min-height:180px;
+
+        padding:1.5rem;
+
+    }
+
+    .course_card{
+
+        padding:1.5rem;
+
+    }
+
+    .portfolio_overlay{
+
+        padding:1.25rem;
+
+    }
+
+    .portfolio_overlay h3{
+
+        font-size:1.1rem;
+
+    }
+
+    .portfolio_overlay p{
+
+        font-size:.9rem;
+
+    }
+
+    .footer_social{
+
+        gap:.75rem;
+
+    }
+
+    .footer_social a{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+}
+
+/* ==========================================================
+   PREFERÊNCIAS DE ACESSIBILIDADE
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
